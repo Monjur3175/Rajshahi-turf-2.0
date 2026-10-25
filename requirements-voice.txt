@@ -1,0 +1,4 @@
+# Only for local voice mode (python agent.py --voice) on Windows
+SpeechRecognition
+sounddevice
+gTTS
