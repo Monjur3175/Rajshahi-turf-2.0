@@ -54,22 +54,3 @@ export const gcal = (b) =>
   encodeURIComponent(CONFIG.address) +
   "&details=" +
   encodeURIComponent("Booking #" + b.booking_id);
-
-export function downloadIcs(b) {
-  const t = [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Rajshahi Turf 2.0//EN", "BEGIN:VEVENT",
-    `UID:booking-${b.booking_id}@rajshahi-turf`,
-    "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
-    `DTSTART;TZID=Asia/Dhaka:${stamp(b.date, b.hour)}`,
-    `DTEND;TZID=Asia/Dhaka:${endStamp(b.date, b.hour)}`,
-    `SUMMARY:Football at ${CONFIG.name} (${b.turf})`,
-    `LOCATION:${CONFIG.address}`,
-    `DESCRIPTION:Booking #${b.booking_id}`,
-    "END:VEVENT", "END:VCALENDAR",
-  ].join("\r\n");
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([t], { type: "text/calendar" }));
-  a.download = `turf-booking-${b.booking_id}.ics`;
-  a.click();
-  URL.revokeObjectURL(a.href);
-}

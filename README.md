@@ -19,7 +19,7 @@ An AI-powered booking system for a football turf in Rajshahi, Bangladesh. Custom
 - Month calendar for the current and next month. A bar under each date shows how booked the day is, and full or past days are disabled.
 - Hourly slot grid from 6am to midnight. Evening slots (after 5pm) are styled as "floodlit" so higher prices are easy to spot.
 - Live price summary, then a short form (name and phone) to confirm.
-- After booking: confirmation message, **Google Calendar** link and a downloadable **.ics** file. These also appear under bookings made through chat.
+- After booking: confirmation message, **Google Calendar** link and a downloadable **PDF booking confirmation**. These also appear under bookings made through chat.
 
 ### Rules and pricing
 | When | 5-a-side | 7-a-side |
