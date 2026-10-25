@@ -91,7 +91,7 @@ export default function Booking({ chatBooking }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: n, phone: p, date, hour, turf }),
       });
-      setDone({ booking: { name: n, phone: p, date, hour, turf, booking_id: r.booking_id }, price: r.price_bdt });
+      setDone({ booking: { name: n, phone: p, date, hour, turf, booking_id: r.booking_id, price_bdt: r.price_bdt }, price: r.price_bdt });
       setHour(null);
       setMsg("");
     } catch (err) {
